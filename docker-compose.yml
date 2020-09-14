@@ -1,0 +1,14 @@
+version: '3'
+services:
+  node-app:
+    stdin_open: true 
+    build: 
+      context: ./
+      #dockerfile: dockerfile
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3001:3000"
+    volumes:
+          - /frontend/node_modules
+          - ./:/usr/app
+
