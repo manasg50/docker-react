@@ -1,5 +1,5 @@
 #specify a base image
-FROM node:alpine as builder
+FROM node:alpine
 
 #specify a Working directory for container
 
@@ -7,7 +7,7 @@ WORKDIR '/usr/app'
 
 # copy package.json to current working directory i.e WORKDIR /usr/app 
 
-COPY ./package.json ./
+COPY ./package*.json ./
 
 #download and install a dependency 
 RUN npm install
@@ -22,4 +22,4 @@ RUN npm run build
 FROM nginx 
 # Expose 80 is for elastic bean stalk port mapping on AWS console 
 EXPOSE 80 
-COPY --from=builder /usr/app/build /usr/share/nginx/html
+COPY --from=0 /usr/app/build /usr/share/nginx/html
