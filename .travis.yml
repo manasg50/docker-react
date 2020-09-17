@@ -9,3 +9,17 @@ before_install:
 
 script:
   - docker run -e CI=true mrc007/docker-react npm run test
+
+# this section is to deploy the travis file in AWS elasticbean stalk 
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-436287192363"
+  bucket_path: "docker-react"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY  
