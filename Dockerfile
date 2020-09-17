@@ -20,4 +20,6 @@ COPY ./ ./
 RUN npm run build
 
 FROM nginx 
+# Expose 80 is for elastic bean stalk port mapping on AWS console 
+EXPOSE 80 
 COPY --from=builder /usr/app/build /usr/share/nginx/html
