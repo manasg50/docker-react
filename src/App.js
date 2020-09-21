@@ -10,7 +10,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-           Edit<code>src/App.js is the latest version of react 
+           Edit<code>src/App.js This is the correct version of react 
               </code> and hey there save to reload.
         </p>
         <a
