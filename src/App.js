@@ -10,8 +10,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-           Edit<code>src/App.js This is the correct version of react 
-              </code> and hey there save to reload.
+           Edit<code> This is the correct version of react 
+              </code> and i have deloyed to the feature branch in github.
         </p>
         <a
           className="App-link"
